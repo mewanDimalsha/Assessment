@@ -1,0 +1,18 @@
+predictor,category,baseline,n,coef,se,z,p_value,odds_ratio,or_ci_low,or_ci_high
+Speed zone,30 km/h,60 km/h,396,-0.1928,0.1087,-1.7741,0.076,0.8246,0.6664,1.0204
+Speed zone,40 km/h,60 km/h,12253,-0.1536,0.0211,-7.2669,0.0,0.8576,0.8228,0.8939
+Speed zone,50 km/h,60 km/h,31243,-0.0242,0.0146,-1.6614,0.0966,0.9761,0.9486,1.0044
+Speed zone,70 km/h,60 km/h,12059,0.1474,0.0205,7.1972,0.0,1.1588,1.1132,1.2063
+Speed zone,80 km/h,60 km/h,29040,0.2459,0.0147,16.7387,0.0,1.2788,1.2425,1.3162
+Speed zone,90 km/h,60 km/h,493,0.4266,0.0909,4.6911,0.0,1.5321,1.2819,1.831
+Speed zone,100 km/h,60 km/h,27237,0.5537,0.0158,35.0055,0.0,1.7397,1.6866,1.7945
+Speed zone,110 km/h,60 km/h,2019,0.4136,0.0462,8.9587,0.0,1.5123,1.3814,1.6555
+Light condition,Dusk/Dawn,Day,15350,-0.1003,0.018,-5.5818,0.0,0.9045,0.8732,0.937
+Light condition,Dark Street lights on,Day,29268,0.2461,0.0134,18.3127,0.0,1.279,1.2457,1.3131
+Light condition,Dark Street lights off,Day,405,0.1727,0.1016,1.7006,0.089,1.1885,0.974,1.4503
+Light condition,Dark No street lights,Day,9942,0.3055,0.0219,13.9732,0.0,1.3573,1.3003,1.4167
+Road geometry,Cross intersection,Not at intersection,41637,-0.1887,0.0129,-14.6799,0.0,0.8281,0.8075,0.8492
+Road geometry,T intersection,Not at intersection,40543,-0.0541,0.0128,-4.2392,0.0,0.9473,0.9239,0.9713
+Road geometry,Multiple intersection,Not at intersection,3363,-0.0682,0.0365,-1.8683,0.0617,0.9341,0.8696,1.0034
+Road geometry,Y intersection,Not at intersection,582,-0.2819,0.0883,-3.193,0.0014,0.7543,0.6345,0.8969
+Road geometry,Dead end,Not at intersection,153,-0.0077,0.1678,-0.0457,0.964,0.9924,0.7143,1.3787

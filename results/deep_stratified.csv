@@ -1,0 +1,90 @@
+table,stratifier,column,level,fsi_100,non_fsi_100,fsi_60,non_fsi_60,pooled,odds_ratio,ci_low,ci_high,skipped,speed_band,crashes,fsi,pct_fsi,low_n
+odds_ratio_100_vs_60,Crash type,ACCIDENT_TYPE,Collision with vehicle,5405.0,5884.0,14739.0,32258.0,False,2.0104,1.9282,2.0962,False,,,,,
+odds_ratio_100_vs_60,Crash type,ACCIDENT_TYPE,Collision with a fixed object,5247.0,3960.0,3154.0,3150.0,False,1.3233,1.2409,1.4113,False,,,,,
+odds_ratio_100_vs_60,Crash type,ACCIDENT_TYPE,Struck Pedestrian,121.0,58.0,2760.0,2345.0,False,1.7725,1.2899,2.4357,False,,,,,
+odds_ratio_100_vs_60,Crash type,ACCIDENT_TYPE,Vehicle overturned (no collision),1510.0,1581.0,661.0,900.0,False,1.3004,1.1503,1.4702,False,,,,,
+odds_ratio_100_vs_60,Crash type,ACCIDENT_TYPE,No collision and no object struck,672.0,738.0,688.0,1113.0,False,1.4731,1.279,1.6966,False,,,,,
+odds_ratio_100_vs_60,Crash type,ACCIDENT_TYPE,Struck animal,471.0,769.0,37.0,81.0,False,1.3408,0.8939,2.0113,False,,,,,
+odds_ratio_100_vs_60,Crash type,ACCIDENT_TYPE,Pooled (Mantel-Haenszel),,,,,True,1.7101,1.6554,1.7666,False,,,,,
+odds_ratio_100_vs_60,Light condition,LIGHT_CONDITION,Day,9286.0,9140.0,14595.0,28414.0,False,1.9779,1.9097,2.0486,False,,,,,
+odds_ratio_100_vs_60,Light condition,LIGHT_CONDITION,Dusk/Dawn,1213.0,1430.0,1727.0,3623.0,False,1.7795,1.6173,1.958,False,,,,,
+odds_ratio_100_vs_60,Light condition,LIGHT_CONDITION,Dark Street lights on,597.0,664.0,5273.0,7437.0,False,1.2681,1.1291,1.4241,False,,,,,
+odds_ratio_100_vs_60,Light condition,LIGHT_CONDITION,Dark Street lights off,12.0,20.0,70.0,85.0,False,,,,True,,,,,
+odds_ratio_100_vs_60,Light condition,LIGHT_CONDITION,Dark No street lights,2653.0,2222.0,609.0,627.0,False,1.2293,1.0849,1.3929,False,,,,,
+odds_ratio_100_vs_60,Light condition,LIGHT_CONDITION,Pooled (Mantel-Haenszel),,,,,True,1.8408,1.7851,1.8981,False,,,,,
+odds_ratio_100_vs_60,Road class,RMA,Local Road,3074.0,2865.0,6058.0,10641.0,False,1.8847,1.7751,2.001,False,,,,,
+odds_ratio_100_vs_60,Road class,RMA,Arterial Other,3783.0,3143.0,11696.0,20743.0,False,2.1346,2.0256,2.2496,False,,,,,
+odds_ratio_100_vs_60,Road class,RMA,Arterial Highway,2758.0,2392.0,3530.0,6846.0,False,2.2361,2.0887,2.3939,False,,,,,
+odds_ratio_100_vs_60,Road class,RMA,Freeway,2732.0,3955.0,463.0,1025.0,False,1.5292,1.3562,1.7244,False,,,,,
+odds_ratio_100_vs_60,Road class,RMA,Pooled (Mantel-Haenszel),,,,,True,2.0244,1.9589,2.0921,False,,,,,
+odds_ratio_100_vs_60,Metro vs country,STAT_DIV_NAME,Metro,3838.0,4866.0,17695.0,31531.0,False,1.4055,1.3421,1.4718,False,,,,,
+odds_ratio_100_vs_60,Metro vs country,STAT_DIV_NAME,Country,9834.0,8536.0,4451.0,8533.0,False,2.2086,2.1085,2.3135,False,,,,,
+odds_ratio_100_vs_60,Metro vs country,STAT_DIV_NAME,Pooled (Mantel-Haenszel),,,,,True,1.7662,1.7097,1.8245,False,,,,,
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Collision with vehicle,,,,,False,,28.7623,29.8408,False,≤50,27363.0,8017.0,29.2987,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Collision with vehicle,,,,,False,,30.9436,31.7826,False,60,46997.0,14739.0,31.3616,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Collision with vehicle,,,,,False,,36.7868,37.8768,False,70–80,30257.0,11295.0,37.3302,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Collision with vehicle,,,,,False,,46.9909,48.7511,False,≥90,12373.0,5923.0,47.8704,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Collision with a fixed object,,,,,False,,44.3942,47.127,False,≤50,5103.0,2335.0,45.7574,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Collision with a fixed object,,,,,False,,48.7978,51.2656,False,60,6304.0,3154.0,50.0317,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Collision with a fixed object,,,,,False,,52.511,54.9908,False,70–80,6208.0,3337.0,53.7532,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Collision with a fixed object,,,,,False,,55.394,57.3259,False,≥90,10122.0,5705.0,56.3624,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Struck Pedestrian,,,,,False,,42.5732,44.829,False,≤50,7426.0,3245.0,43.6978,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Struck Pedestrian,,,,,False,,52.695,55.4281,False,60,5105.0,2760.0,54.0646,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Struck Pedestrian,,,,,False,,62.9959,68.0422,False,70–80,1359.0,891.0,65.5629,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Struck Pedestrian,,,,,False,,62.3144,74.8565,False,≥90,206.0,142.0,68.932,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Vehicle overturned (no collision),,,,,False,,35.8854,40.9379,False,≤50,1420.0,545.0,38.3803,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Vehicle overturned (no collision),,,,,False,,39.9152,44.8117,False,60,1561.0,661.0,42.3447,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Vehicle overturned (no collision),,,,,False,,43.7126,48.973,False,70–80,1377.0,638.0,46.3326,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Vehicle overturned (no collision),,,,,False,,47.7503,51.16,False,≥90,3300.0,1632.0,49.4545,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,No collision and no object struck,,,,,False,,32.8646,37.2597,False,≤50,1807.0,633.0,35.0304,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,No collision and no object struck,,,,,False,,35.9843,40.4679,False,60,1801.0,688.0,38.201,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,No collision and no object struck,,,,,False,,38.6525,44.5539,False,70–80,1068.0,444.0,41.573,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,No collision and no object struck,,,,,False,,44.4758,49.5464,False,≥90,1485.0,698.0,47.0034,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Struck animal,,,,,False,,19.9002,43.3361,False,≤50,56.0,17.0,30.3571,True
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Struck animal,,,,,False,,23.6849,40.2027,False,60,118.0,37.0,31.3559,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Struck animal,,,,,False,,29.7719,39.3444,False,70–80,375.0,129.0,34.4,False
+fsi_by_speed_band,Crash type,ACCIDENT_TYPE,Struck animal,,,,,False,,34.3765,39.5143,False,≥90,1352.0,499.0,36.9083,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Day,,,,,False,,32.8853,33.9303,False,≤50,31297.0,10455.0,33.4058,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Day,,,,,False,,33.4887,34.3837,False,60,43009.0,14595.0,33.9348,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Day,,,,,False,,39.0576,40.2029,False,70–80,28020.0,11104.0,39.6288,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Day,,,,,False,,49.5943,50.9832,False,≥90,19909.0,10012.0,50.2888,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dusk/Dawn,,,,,False,,29.3543,32.4154,False,≤50,3496.0,1079.0,30.8638,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dusk/Dawn,,,,,False,,31.0406,33.5456,False,60,5350.0,1727.0,32.2804,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dusk/Dawn,,,,,False,,36.4491,39.6164,False,70–80,3606.0,1371.0,38.02,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dusk/Dawn,,,,,False,,44.2579,47.8851,False,≥90,2898.0,1335.0,46.0663,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dark Street lights on,,,,,False,,37.1636,39.279,False,≤50,8104.0,3097.0,38.2157,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dark Street lights on,,,,,False,,40.6331,42.346,False,60,12710.0,5273.0,41.487,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dark Street lights on,,,,,False,,44.1781,46.4929,False,70–80,7103.0,3220.0,45.333,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dark Street lights on,,,,,False,,44.5738,49.8905,False,≥90,1351.0,638.0,47.2243,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dark Street lights off,,,,,False,,27.2711,45.7648,False,≤50,100.0,36.0,36.0,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dark Street lights off,,,,,False,,37.5381,53.0185,False,60,155.0,70.0,45.1613,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dark Street lights off,,,,,False,,37.0335,55.6833,False,70–80,106.0,49.0,46.2264,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dark Street lights off,,,,,False,,21.8756,48.8611,False,≥90,44.0,15.0,34.0909,True
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dark No street lights,,,,,False,,41.3546,47.8538,False,≤50,895.0,399.0,44.581,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dark No street lights,,,,,False,,46.4912,52.057,False,60,1236.0,609.0,49.2718,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dark No street lights,,,,,False,,49.7955,53.9084,False,70–80,2264.0,1174.0,51.8551,False
+fsi_by_speed_band,Light condition,LIGHT_CONDITION,Dark No street lights,,,,,False,,52.1016,54.7262,False,≥90,5547.0,2963.0,53.4163,False
+fsi_by_speed_band,Road class,RMA,Local Road,,,,,False,,34.3465,35.4016,False,≤50,31343.0,10930.0,34.8722,False
+fsi_by_speed_band,Road class,RMA,Local Road,,,,,False,,35.5516,37.01,False,60,16699.0,6058.0,36.2776,False
+fsi_by_speed_band,Road class,RMA,Local Road,,,,,False,,43.7327,46.4449,False,70–80,5168.0,2330.0,45.0851,False
+fsi_by_speed_band,Road class,RMA,Local Road,,,,,False,,50.3587,52.8854,False,≥90,6007.0,3101.0,51.6231,False
+fsi_by_speed_band,Road class,RMA,Arterial Other,,,,,False,,31.6835,33.649,False,≤50,8745.0,2856.0,32.6587,False
+fsi_by_speed_band,Road class,RMA,Arterial Other,,,,,False,,35.5345,36.5795,False,60,32439.0,11696.0,36.0554,False
+fsi_by_speed_band,Road class,RMA,Arterial Other,,,,,False,,40.1715,41.6514,False,70–80,16957.0,6937.0,40.9094,False
+fsi_by_speed_band,Road class,RMA,Arterial Other,,,,,False,,53.3212,55.6278,False,≥90,7159.0,3900.0,54.4769,False
+fsi_by_speed_band,Road class,RMA,Arterial Highway,,,,,False,,30.9175,34.5349,False,≤50,2581.0,844.0,32.7005,False
+fsi_by_speed_band,Road class,RMA,Arterial Highway,,,,,False,,33.1153,34.9382,False,60,10376.0,3530.0,34.0208,False
+fsi_by_speed_band,Road class,RMA,Arterial Highway,,,,,False,,40.228,41.9036,False,70–80,13243.0,5438.0,41.0632,False
+fsi_by_speed_band,Road class,RMA,Arterial Highway,,,,,False,,52.0632,54.6955,False,≥90,5515.0,2944.0,53.3817,False
+fsi_by_speed_band,Road class,RMA,Freeway,,,,,False,,26.6287,36.7381,False,≤50,321.0,101.0,31.4642,False
+fsi_by_speed_band,Road class,RMA,Freeway,,,,,False,,28.8144,33.5141,False,60,1488.0,463.0,31.1156,False
+fsi_by_speed_band,Road class,RMA,Freeway,,,,,False,,35.8833,38.8116,False,70–80,4189.0,1564.0,37.3359,False
+fsi_by_speed_band,Road class,RMA,Freeway,,,,,False,,41.1245,43.2245,False,≥90,8494.0,3582.0,42.1709,False
+fsi_by_speed_band,Metro vs country,STAT_DIV_NAME,Metro,,,,,False,,34.2003,35.2125,False,≤50,33981.0,11793.0,34.7047,False
+fsi_by_speed_band,Metro vs country,STAT_DIV_NAME,Metro,,,,,False,,35.5237,36.3714,False,60,49226.0,17695.0,35.9465,False
+fsi_by_speed_band,Metro vs country,STAT_DIV_NAME,Metro,,,,,False,,39.455,40.5087,False,70–80,33206.0,13276.0,39.9807,False
+fsi_by_speed_band,Metro vs country,STAT_DIV_NAME,Metro,,,,,False,,43.2834,45.3057,False,≥90,9268.0,4105.0,44.2922,False
+fsi_by_speed_band,Metro vs country,STAT_DIV_NAME,Country,,,,,False,,31.9129,33.7831,False,≤50,9686.0,3181.0,32.8412,False
+fsi_by_speed_band,Metro vs country,STAT_DIV_NAME,Country,,,,,False,,33.469,35.1016,False,60,12984.0,4451.0,34.2807,False
+fsi_by_speed_band,Metro vs country,STAT_DIV_NAME,Country,,,,,False,,44.8714,47.0968,False,70–80,7703.0,3542.0,45.9821,False
+fsi_by_speed_band,Metro vs country,STAT_DIV_NAME,Country,,,,,False,,52.3251,53.6981,False,≥90,20301.0,10762.0,53.0122,False
