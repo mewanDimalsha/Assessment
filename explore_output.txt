@@ -1,0 +1,720 @@
+Found 1 CSV file(s) in /Users/mewan/Documents/Assessment/data: ['victorian_road_crash_data.csv']
+
+================================================================================
+FILE: victorian_road_crash_data.csv
+================================================================================
+
+Shape: 200,754 rows x 52 columns
+
+Columns and dtypes:
+  ACCIDENT_NO                  object     unique=200,754
+  ACCIDENT_DATE                object     unique=5,142
+  ACCIDENT_TIME                object     unique=1,505
+  ACCIDENT_TYPE                object     unique=9
+  DAY_OF_WEEK                  object     unique=7
+  DCA_CODE                     int64      unique=81
+  DCA_CODE_DESCRIPTION         object     unique=81
+  LIGHT_CONDITION              object     unique=7
+  POLICE_ATTEND                object     unique=3
+  ROAD_GEOMETRY                object     unique=9
+  SEVERITY                     object     unique=4
+  SPEED_ZONE                   object     unique=13
+  RUN_OFFROAD                  object     unique=2
+  ROAD_NAME                    object     unique=14,570
+  ROAD_TYPE                    object     unique=80
+  ROAD_ROUTE_1                 float64    unique=1,506
+  LGA_NAME                     object     unique=87
+  DTP_REGION                   object     unique=8
+  LATITUDE                     float64    unique=107,109
+  LONGITUDE                    float64    unique=79,372
+  VICGRID_X                    float64    unique=143,645
+  VICGRID_Y                    float64    unique=143,644
+  TOTAL_PERSONS                int64      unique=45
+  INJ_OR_FATAL                 int64      unique=28
+  FATALITY                     int64      unique=6
+  SERIOUSINJURY                int64      unique=13
+  OTHERINJURY                  int64      unique=23
+  NONINJURED                   int64      unique=40
+  MALES                        int64      unique=26
+  FEMALES                      int64      unique=30
+  BICYCLIST                    int64      unique=9
+  PASSENGER                    int64      unique=42
+  DRIVER                       int64      unique=16
+  PEDESTRIAN                   int64      unique=10
+  PILLION                      int64      unique=3
+  MOTORCYCLIST                 int64      unique=9
+  UNKNOWN                      int64      unique=24
+  PED_CYCLIST_5_12             int64      unique=6
+  PED_CYCLIST_13_18            int64      unique=5
+  OLD_PED_65_AND_OVER          int64      unique=4
+  OLD_DRIVER_75_AND_OVER       int64      unique=4
+  YOUNG_DRIVER_18_25           int64      unique=6
+  NO_OF_VEHICLES               float64    unique=16
+  HEAVYVEHICLE                 float64    unique=5
+  PASSENGERVEHICLE             float64    unique=16
+  MOTORCYCLE                   float64    unique=9
+  PT_VEHICLE                   float64    unique=3
+  DEG_URBAN_NAME               object     unique=7
+  SRNS                         object     unique=4
+  RMA                          object     unique=6
+  DIVIDED                      object     unique=2
+  STAT_DIV_NAME                object     unique=2
+
+Missing values per column (blank/NaN):
+                        missing    pct
+ACCIDENT_NO                   0   0.00
+ACCIDENT_DATE                 0   0.00
+ACCIDENT_TIME                 0   0.00
+ACCIDENT_TYPE                 0   0.00
+DAY_OF_WEEK                   0   0.00
+DCA_CODE                      0   0.00
+DCA_CODE_DESCRIPTION          0   0.00
+LIGHT_CONDITION               0   0.00
+POLICE_ATTEND                 0   0.00
+ROAD_GEOMETRY                 0   0.00
+SEVERITY                      0   0.00
+SPEED_ZONE                    0   0.00
+RUN_OFFROAD                   0   0.00
+ROAD_NAME                   263   0.13
+ROAD_TYPE                  2750   1.37
+ROAD_ROUTE_1                 85   0.04
+LGA_NAME                     90   0.04
+DTP_REGION                   85   0.04
+LATITUDE                     85   0.04
+LONGITUDE                    85   0.04
+VICGRID_X                    85   0.04
+VICGRID_Y                    85   0.04
+TOTAL_PERSONS                 0   0.00
+INJ_OR_FATAL                  0   0.00
+FATALITY                      0   0.00
+SERIOUSINJURY                 0   0.00
+OTHERINJURY                   0   0.00
+NONINJURED                    0   0.00
+MALES                         0   0.00
+FEMALES                       0   0.00
+BICYCLIST                     0   0.00
+PASSENGER                     0   0.00
+DRIVER                        0   0.00
+PEDESTRIAN                    0   0.00
+PILLION                       0   0.00
+MOTORCYCLIST                  0   0.00
+UNKNOWN                       0   0.00
+PED_CYCLIST_5_12              0   0.00
+PED_CYCLIST_13_18             0   0.00
+OLD_PED_65_AND_OVER           0   0.00
+OLD_DRIVER_75_AND_OVER        0   0.00
+YOUNG_DRIVER_18_25            0   0.00
+NO_OF_VEHICLES                9   0.00
+HEAVYVEHICLE                  9   0.00
+PASSENGERVEHICLE              9   0.00
+MOTORCYCLE                    9   0.00
+PT_VEHICLE                    9   0.00
+DEG_URBAN_NAME              994   0.50
+SRNS                     140526  70.00
+RMA                        7677   3.82
+DIVIDED                    7677   3.82
+STAT_DIV_NAME              1015   0.51
+
+Numeric summary:
+                           count          mean           std           min           25%           50%           75%           max
+DCA_CODE                200754.0  1.386883e+02     25.943624  1.000000e+02  1.200000e+02  1.300000e+02  1.670000e+02  1.990000e+02
+ROAD_ROUTE_1            200669.0  6.534957e+03   2996.431829 -1.000000e+00  4.971000e+03  5.801000e+03  9.999000e+03  9.999000e+03
+LATITUDE                200669.0 -3.771587e+01      0.556045 -3.903083e+01 -3.795822e+01 -3.781676e+01 -3.769517e+01 -3.411570e+01
+LONGITUDE               200669.0  1.449679e+02      0.798197  1.409665e+02  1.448320e+02  1.450098e+02  1.452028e+02  1.497575e+02
+VICGRID_X               200669.0  2.497081e+06  70865.657232  2.129485e+06  2.485204e+06  2.500860e+06  2.517845e+06  2.920148e+06
+VICGRID_Y               200669.0  2.420259e+06  61416.925183  2.273772e+06  2.393501e+06  2.409319e+06  2.422767e+06  2.815696e+06
+TOTAL_PERSONS           200754.0  2.361009e+00      1.446166  1.000000e+00  2.000000e+00  2.000000e+00  3.000000e+00  9.700000e+01
+INJ_OR_FATAL            200754.0  1.299840e+00      0.755888  0.000000e+00  1.000000e+00  1.000000e+00  1.000000e+00  4.800000e+01
+FATALITY                200754.0  1.806191e-02      0.144788  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  5.000000e+00
+SERIOUSINJURY           200754.0  4.179045e-01      0.624363  0.000000e+00  0.000000e+00  0.000000e+00  1.000000e+00  1.500000e+01
+OTHERINJURY             200754.0  8.638732e-01      0.786391  0.000000e+00  0.000000e+00  1.000000e+00  1.000000e+00  4.300000e+01
+NONINJURED              200754.0  1.034988e+00      1.224234  0.000000e+00  0.000000e+00  1.000000e+00  1.000000e+00  9.400000e+01
+MALES                   200754.0  1.316019e+00      0.992229  0.000000e+00  1.000000e+00  1.000000e+00  2.000000e+00  4.600000e+01
+FEMALES                 200754.0  9.371470e-01      1.034926  0.000000e+00  0.000000e+00  1.000000e+00  1.000000e+00  5.100000e+01
+BICYCLIST               200754.0  9.937037e-02      0.310067  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  8.000000e+00
+PASSENGER               200754.0  4.773853e-01      1.122775  0.000000e+00  0.000000e+00  0.000000e+00  1.000000e+00  9.500000e+01
+DRIVER                  200754.0  1.488623e+00      0.885303  0.000000e+00  1.000000e+00  1.000000e+00  2.000000e+00  2.100000e+01
+PEDESTRIAN              200754.0  9.380137e-02      0.317166  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  1.100000e+01
+PILLION                 200754.0  5.115714e-03      0.072312  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  2.000000e+00
+MOTORCYCLIST            200754.0  1.435638e-01      0.360538  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  9.000000e+00
+UNKNOWN                 200754.0  5.095789e-02      0.367295  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  5.200000e+01
+PED_CYCLIST_5_12        200754.0  9.125597e-03      0.099894  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  8.000000e+00
+PED_CYCLIST_13_18       200754.0  1.605946e-02      0.129875  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  5.000000e+00
+OLD_PED_65_AND_OVER     200754.0  1.845542e-02      0.138243  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  3.000000e+00
+OLD_DRIVER_75_AND_OVER  200754.0  6.891021e-02      0.260170  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  3.000000e+00
+YOUNG_DRIVER_18_25      200754.0  2.979716e-01      0.517643  0.000000e+00  0.000000e+00  0.000000e+00  1.000000e+00  5.000000e+00
+NO_OF_VEHICLES          200745.0  1.824469e+00      0.744531  1.000000e+00  1.000000e+00  2.000000e+00  2.000000e+00  2.100000e+01
+HEAVYVEHICLE            200745.0  4.770231e-02      0.225426  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  4.000000e+00
+PASSENGERVEHICLE        200745.0  1.444853e+00      0.909364  0.000000e+00  1.000000e+00  1.000000e+00  2.000000e+00  1.900000e+01
+MOTORCYCLE              200745.0  1.440385e-01      0.361227  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  9.000000e+00
+PT_VEHICLE              200745.0  1.211487e-02      0.110441  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  2.000000e+00
+
+Top 10 value_counts for categorical columns (object dtype, or <= 50 distinct values):
+
+-- ACCIDENT_NO (200,754 distinct)
+ACCIDENT_NO
+T20140024624    1
+T20250019500    1
+T20240019803    1
+T20230019815    1
+T20190006693    1
+T20170022796    1
+T20120022664    1
+T20150015555    1
+T20240024831    1
+T20240000563    1
+
+-- ACCIDENT_DATE (5,142 distinct)
+ACCIDENT_DATE
+2015-04-17    80
+2025-03-07    79
+2022-11-18    75
+2016-03-10    74
+2022-03-03    72
+2015-12-09    72
+2025-02-28    72
+2013-05-07    71
+2020-02-14    71
+2016-04-29    71
+
+-- ACCIDENT_TIME (1,505 distinct)
+ACCIDENT_TIME
+16:00:00    2879
+15:00:00    2611
+17:00:00    2595
+15:30:00    2537
+18:00:00    2407
+14:00:00    2372
+16:30:00    2309
+17:30:00    2273
+12:00:00    2218
+13:00:00    2217
+
+-- ACCIDENT_TYPE (9 distinct)
+ACCIDENT_TYPE
+Collision with vehicle               130808
+Collision with a fixed object         30010
+Struck Pedestrian                     16548
+Vehicle overturned (no collision)      9330
+No collision and no object struck      8232
+Struck animal                          2222
+collision with some other object       2100
+Fall from or in moving vehicle         1287
+Other accident                          217
+
+-- DAY_OF_WEEK (7 distinct)
+DAY_OF_WEEK
+Friday       31599
+Thursday     30367
+Wednesday    30055
+Tuesday      29067
+Saturday     28014
+Monday       27310
+Sunday       24342
+
+-- DCA_CODE_DESCRIPTION (81 distinct)
+DCA_CODE_DESCRIPTION
+REAR END(VEHICLES IN SAME LANE)                      36266
+RIGHT THROUGH                                        17292
+CROSS TRAFFIC(INTERSECTIONS ONLY)                    14425
+LEFT OFF CARRIAGEWAY INTO OBJECT/PARKED VEHICLE      11264
+RIGHT NEAR (INTERSECTIONS ONLY)                       9358
+RIGHT OFF CARRIAGEWAY INTO OBJECT/PARKED VEHICLE      7785
+OUT OF CONTROL ON CARRIAGEWAY (ON STRAIGHT)           7744
+HEAD ON (NOT OVERTAKING)                              6433
+PED NEAR SIDE. PED HIT BY VEHICLE FROM THE RIGHT.     6400
+OFF RIGHT BEND INTO OBJECT/PARKED VEHICLE             5213
+
+-- LIGHT_CONDITION (7 distinct)
+LIGHT_CONDITION
+Day                           134630
+Dark Street lights on          30765
+Dusk/Dawn                      16573
+Dark No street lights          10521
+Unk.                            5523
+Dark Street lights unknown      2306
+Dark Street lights off           436
+
+-- POLICE_ATTEND (3 distinct)
+POLICE_ATTEND
+Yes          147888
+No            52133
+Not known       733
+
+-- ROAD_GEOMETRY (9 distinct)
+ROAD_GEOMETRY
+Not at intersection      104096
+Cross intersection        46309
+T intersection            45400
+Multiple intersection      3806
+Y intersection              673
+Unknown                     275
+Dead end                    178
+Private property             11
+Road closure                  6
+
+-- SEVERITY (4 distinct)
+SEVERITY
+Other injury accident      125154
+Serious injury accident     72225
+Fatal accident               3371
+Non injury accident             4
+
+-- SPEED_ZONE (13 distinct)
+SPEED_ZONE
+60 km/hr                       65413
+50 km/hr                       33043
+80 km/hr                       30447
+100 km/hr                      28284
+Not known                      13261
+40 km/hr                       12968
+70 km/hr                       12556
+110 km/hr                       2088
+Camping grounds or off road     1344
+90 km/hr                         505
+
+-- RUN_OFFROAD (2 distinct)
+RUN_OFFROAD
+No     166093
+Yes     34661
+
+-- ROAD_NAME (14,570 distinct)
+ROAD_NAME
+PRINCES            5119
+HIGH               2814
+NEPEAN             1960
+MONASH             1863
+SOUTH GIPPSLAND    1748
+SYDNEY             1551
+DANDENONG          1477
+WESTERN            1447
+SPRINGVALE         1437
+HUME               1381
+
+-- ROAD_TYPE (80 distinct)
+ROAD_TYPE
+ROAD         100934
+STREET        44189
+HIGHWAY       17912
+FREEWAY        8461
+DRIVE          5554
+AVENUE         5456
+RAMP           2878
+NaN            2750
+PARADE         2376
+BOULEVARD      1835
+
+-- LGA_NAME (87 distinct)
+LGA_NAME
+MELBOURNE       10422
+CASEY            9136
+GEELONG          7899
+HUME             7316
+DANDENONG        6909
+BRIMBANK         6184
+WHITTLESEA       5989
+MONASH           5988
+YARRA RANGES     5438
+MORELAND         5405
+
+-- DTP_REGION (8 distinct)
+DTP_REGION
+INNER METRO                       79376
+GREATER METRO                     64207
+BARWON SOUTH WEST                 13895
+HUME                              12464
+GIPPSLAND                         10706
+LODDON MALLEE                     10676
+GRAMPIANS                          9343
+NaN                                  85
+METROPOLITAN SOUTH EAST REGION        2
+
+-- TOTAL_PERSONS (45 distinct)
+TOTAL_PERSONS
+2     95910
+1     43518
+3     34098
+4     14172
+5      6758
+6      3268
+7      1466
+8       720
+9       316
+10      190
+
+-- INJ_OR_FATAL (28 distinct)
+INJ_OR_FATAL
+1     159833
+2      29045
+3       7613
+4       2537
+5       1061
+6        384
+7        143
+8         55
+9         28
+10        17
+
+-- FATALITY (6 distinct)
+FATALITY
+0    197383
+1      3165
+2       174
+3        18
+4        11
+5         3
+
+-- SERIOUSINJURY (13 distinct)
+SERIOUSINJURY
+0     127570
+1      65027
+2       6431
+3       1210
+4        332
+5        119
+6         37
+7         16
+8          5
+10         2
+
+-- OTHERINJURY (23 distinct)
+OTHERINJURY
+1     115341
+0      60902
+2      18575
+3       4048
+4       1234
+5        441
+6        116
+7         49
+8         14
+10         8
+
+-- NONINJURED (40 distinct)
+NONINJURED
+1    92846
+0    65750
+2    25984
+3     9046
+4     3954
+5     1711
+6      720
+7      348
+8      143
+9       75
+
+-- MALES (26 distinct)
+MALES
+1    96101
+2    53894
+0    33492
+3    12066
+4     3433
+5     1129
+6      359
+7      126
+8       55
+9       24
+
+-- FEMALES (30 distinct)
+FEMALES
+0    77996
+1    77167
+2    32624
+3     8825
+4     2745
+5      896
+6      287
+7      103
+8       40
+9       27
+
+-- BICYCLIST (9 distinct)
+BICYCLIST
+0    181267
+1     19131
+2       301
+3        29
+4        15
+5         4
+7         3
+6         2
+8         2
+
+-- PASSENGER (42 distinct)
+PASSENGER
+0    145421
+1     33716
+2     11803
+3      5423
+4      2633
+5       925
+6       407
+7       177
+8        89
+9        40
+
+-- DRIVER (16 distinct)
+DRIVER
+1    82142
+2    79462
+0    21834
+3    13113
+4     3130
+5      753
+6      205
+7       65
+8       24
+9       11
+
+-- PEDESTRIAN (10 distinct)
+PEDESTRIAN
+0     183131
+1      16633
+2        843
+3        105
+4         29
+5          7
+7          2
+6          2
+11         1
+9          1
+
+-- PILLION (3 distinct)
+PILLION
+0    199741
+1       999
+2        14
+
+-- MOTORCYCLIST (9 distinct)
+MOTORCYCLIST
+0    172522
+1     27712
+2       473
+3        37
+4         5
+5         2
+9         1
+6         1
+7         1
+
+-- UNKNOWN (24 distinct)
+UNKNOWN
+0     192382
+1       7290
+2        824
+3        161
+4         53
+5         13
+6          7
+10         3
+8          3
+16         2
+
+-- PED_CYCLIST_5_12 (6 distinct)
+PED_CYCLIST_5_12
+0    198985
+1      1719
+2        44
+3         4
+8         1
+5         1
+
+-- PED_CYCLIST_13_18 (5 distinct)
+PED_CYCLIST_13_18
+0    197624
+1      3046
+2        76
+3         7
+5         1
+
+-- OLD_PED_65_AND_OVER (4 distinct)
+OLD_PED_65_AND_OVER
+0    197145
+1      3517
+2        88
+3         4
+
+-- OLD_DRIVER_75_AND_OVER (4 distinct)
+OLD_DRIVER_75_AND_OVER
+0    187267
+1     13147
+2       333
+3         7
+
+-- YOUNG_DRIVER_18_25 (6 distinct)
+YOUNG_DRIVER_18_25
+0    146475
+1     49060
+2      4931
+3       260
+4        23
+5         5
+
+-- NO_OF_VEHICLES (16 distinct)
+NO_OF_VEHICLES
+2.0     113570
+1.0      65005
+3.0      16767
+4.0       3971
+5.0       1004
+6.0        264
+7.0         92
+8.0         33
+9.0         17
+10.0        10
+
+-- HEAVYVEHICLE (5 distinct)
+HEAVYVEHICLE
+0.0    191678
+1.0      8589
+2.0       448
+3.0        29
+NaN         9
+4.0         1
+
+-- PASSENGERVEHICLE (16 distinct)
+PASSENGERVEHICLE
+1.0    82531
+2.0    74408
+0.0    26195
+3.0    13326
+4.0     3241
+5.0      737
+6.0      198
+7.0       55
+8.0       28
+9.0       13
+
+-- MOTORCYCLE (9 distinct)
+MOTORCYCLE
+0.0    172430
+1.0     27787
+2.0       479
+3.0        39
+NaN         9
+4.0         4
+5.0         3
+9.0         1
+6.0         1
+7.0         1
+
+-- PT_VEHICLE (3 distinct)
+PT_VEHICLE
+0.0    198336
+1.0      2386
+2.0        23
+NaN         9
+
+-- DEG_URBAN_NAME (7 distinct)
+DEG_URBAN_NAME
+MELB_URBAN                 125418
+RURAL_VICTORIA              42096
+LARGE_PROVINCIAL_CITIES     11473
+SMALL_CITIES                10339
+TOWNS                        6185
+MELBOURNE_CBD                2424
+SMALL_TOWNS                  1825
+NaN                           994
+
+-- SRNS (4 distinct)
+SRNS
+NaN    140526
+C       25839
+M       17929
+B        8498
+A        7962
+
+-- RMA (6 distinct)
+RMA
+Arterial Other      72668
+Local Road          69620
+Arterial Highway    34690
+Freeway             16019
+NaN                  7677
+Non Arterial           78
+Proposed Road           2
+
+-- DIVIDED (2 distinct)
+DIVIDED
+Undivided    123626
+Divided       69451
+NaN            7677
+
+-- STAT_DIV_NAME (2 distinct)
+STAT_DIV_NAME
+Metro      142967
+Country     56772
+NaN          1015
+
+--- Data quality checks ---
+
+Sentinel codes [777, 888, 999, 9999] in numeric columns:
+  ROAD_ROUTE_1                 {9999: 76719}
+
+Text values that mean unknown/not known/other (non-blank):
+  ACCIDENT_TYPE                    217  {'Other accident': 217}
+  DCA_CODE_DESCRIPTION           6,307  {'OTHER ACCIDENTS-OFF STRAIGHT NOT INCLUDED IN DCAs 170-175': 1826, 'OTHER SAME DIRECTION-MANOUEVRES NOT INCLUDED IN DCAs 130-137': 911, 'OTHER ADJACENT (INTERSECTIONS ONLY)': 814, 'OTHER ON PATH': 729, 'OTHER MANOEUVRING NOT INCLUDED IN DCAs 140-148': 659}
+  LIGHT_CONDITION                7,829  {'Unk.': 5523, 'Dark Street lights unknown': 2306}
+  POLICE_ATTEND                    733  {'Not known': 733}
+  ROAD_GEOMETRY                    275  {'Unknown': 275}
+  SPEED_ZONE                    13,660  {'Not known': 13261, 'Other speed limit': 399}
+
+Coordinates:
+  missing lat/lon:            85
+  zero lat/lon:               0
+  outside Victoria bbox:      0
+
+Date coverage (ACCIDENT_DATE):
+  unparseable dates: 0
+  range: 2012-01-01 to 2026-01-31
+               records  months_present  first_date   last_date
+ACCIDENT_DATE                                                 
+2012             13912              12  2012-01-01  2012-12-31
+2013             14023              12  2013-01-01  2013-12-31
+2014             14503              12  2014-01-01  2014-12-31
+2015             15684              12  2015-01-01  2015-12-31
+2016             15779              12  2016-01-01  2016-12-31
+2017             13351              12  2017-01-01  2017-12-31
+2018             12765              12  2018-01-01  2018-12-31
+2019             14399              12  2019-01-01  2019-12-31
+2020             12170              12  2020-01-01  2020-12-31
+2021             14013              12  2021-01-01  2021-12-31
+2022             15043              12  2022-01-01  2022-12-31
+2023             15562              12  2023-01-01  2023-12-31
+2024             15392              12  2024-01-01  2024-12-31
+2025             14022              12  2025-01-01  2025-12-31
+2026               136               1  2026-01-01  2026-01-31
+  years with <12 months of data: [2026]
+  years with <80% of median yearly records: [2026]
+  last 12 months vs median of the 24 months before (1292):
+    2025-02:  1,305
+    2025-03:  1,558
+    2025-04:  1,298
+    2025-05:  1,492
+    2025-06:  1,280
+    2025-07:  1,248
+    2025-08:  1,284
+    2025-09:    968  <-- below 80%, likely incomplete
+    2025-10:  1,058
+    2025-11:    585  <-- below 80%, likely incomplete
+    2025-12:    692  <-- below 80%, likely incomplete
+    2026-01:    136  <-- below 80%, likely incomplete
+
+Time (ACCIDENT_TIME): not in HH:MM:SS format=85, exactly 00:00:00=113
+  examples: ['04:39:00.0000000', '18:00:00.0000000', '15:05:00.0000000']
+  of these, also missing coordinates: 85
+
+Fully duplicated rows: 0
+Rows where FATALITY+SERIOUSINJURY+OTHERINJURY+NONINJURED != TOTAL_PERSONS: 4,834
+Rows where MALES+FEMALES != TOTAL_PERSONS (sex unknown): 17,573
+Rows with TOTAL_PERSONS == 0: 0
+ROAD_ROUTE_1 == -1: 500
+
+================================================================================
+JOIN KEYS
+================================================================================
+victorian_road_crash_data.csv: unique, non-null columns (candidate primary keys): ['ACCIDENT_NO']
+  ACCIDENT_NO: 200,754 distinct, 0 duplicated values
+
+Only one CSV in ./data, so there is nothing to join. The file is a flattened, one-row-per-crash extract (person and vehicle counts are already aggregated into columns).
