@@ -1,0 +1,305 @@
+Loading data...
+  [data_loader] victorian_road_crash_data.csv: crash table, 200,754 rows
+Loaded 200,754 crashes x 57 columns (3,439 in the incomplete period, flagged INCOMPLETE_PERIOD)
+
+=== 0. Data quality ===
+  saved figures/dq_01_crashes_per_month.png
+  saved figures/dq_02_missing_values.png
+  saved figures/dq_03_unknown_labels.png
+  saved figures/dq_04_crash_locations.png
+  saved figures/dq_05_categories.png
+
+=== 1. How does speed zone influence crash severity? ===
+  Starting rows: 200,754
+  Step 1: removed 3,439 crashes from the incomplete period (FSI share 53.1% vs 37.4% in complete months)
+  Step 2: removed 14,683 crashes with unknown speed zone (7.4% of remaining rows):
+            Not known                       12,994
+            Camping grounds or off road      1,307
+            Other speed limit                  382
+  Step 3: removed 3 non-injury crashes (dataset only covers injury crashes)
+  Rows used: 182,629 (91.0% of all rows)
+
+  Key numbers:
+  - 182,629 injury crashes with a known speed zone, Jan 2012 – Aug 2025
+  - Overall: 38.5% fatal or serious, 1.76% fatal
+
+  Per speed zone (% FSI [95% CI], % fatal [95% CI]):
+     30 km/h  n=   412  FSI  30.6% [26.3–35.2]  fatal 0.49% [0.13–1.75]
+     40 km/h  n=12,717  FSI  31.7% [30.9–32.5]  fatal 0.53% [0.42–0.67]
+     50 km/h  n=32,475  FSI  34.7% [34.2–35.2]  fatal 0.88% [0.79–0.99]
+     60 km/h  n=64,442  FSI  35.2% [34.8–35.5]  fatal 1.02% [0.95–1.10]
+     70 km/h  n=12,385  FSI  38.8% [37.9–39.6]  fatal 1.50% [1.30–1.73]
+     80 km/h  n=29,865  FSI  41.3% [40.8–41.9]  fatal 1.87% [1.72–2.03]
+     90 km/h  n=   500  FSI  46.6% [42.3–51.0]  fatal 4.20% [2.76–6.34]
+    100 km/h  n=27,760  FSI  50.1% [49.5–50.7]  fatal 4.78% [4.53–5.03]
+    110 km/h  n= 2,053  FSI  47.9% [45.7–50.0]  fatal 4.97% [4.11–6.00]
+
+  Comparisons below use zones with >= 1,000 crashes (40, 50, 60, 70, 80, 100, 110 km/h):
+  - Highest fatal share: 110 km/h (4.97%); lowest: 40 km/h (0.53%) - 9.4x higher
+  - Highest FSI share: 100 km/h (50.1%); lowest: 40 km/h (31.7%)
+  - Zones of 80 km/h and above: 32.9% of crashes but 62.5% of fatal crashes
+  - Most crashes: 60 km/h zones (35.3% of all crashes)
+  - Chi-square test (speed zone x severity): chi2(16) = 3,959.8, p < 0.001, Cramér's V = 0.104
+  - Excluded from chart and test: 75 km/h (only 20 crashes)
+    Note: with this many crashes almost any difference is 'significant'; Cramér's V shows how strong the association is.
+  saved figures/inv1_speed_zone_severity.png
+  saved results/inv1.csv
+
+=== 2. How does crash frequency vary by hour of day and day of week? ===
+  Starting rows: 200,754
+  Step 1: removed 3,439 crashes from the incomplete period (FSI share 53.1% vs 37.4% in complete months)
+  Step 2: removed 0 crashes with unknown hour or day (midnight 00:00 kept - not a placeholder)
+  Step 3: removed 4 non-injury crashes (dataset only covers injury crashes)
+  Rows used: 197,311 (98.3% of all rows)
+
+  Key numbers:
+  - 197,311 injury crashes, Jan 2012 – Aug 2025 (4,992 days)
+  - Busiest hour-slot: Thu 17:00–18:00 - 3.77 crashes per week (2,689 in total)
+  - Quietest hour-slot: Tue 02:00–03:00 - 0.18 crashes per week (21x fewer)
+  - Weekday peak hour: 17:00 (3.61 crashes per day); weekend peak hour: 12:00 (2.98 per day)
+  - Average crashes per day: weekday 40.9, weekend 36.0
+  - Weekday afternoon peak (15:00–18:59, Mon–Fri): 24.4% of crashes in 11.9% of the week's hours
+  - Busiest day: Friday (43.6 crashes/day, 15.8% of crashes); quietest: Sunday (33.4 crashes/day, 12.1%)
+  - Night (22:00–05:59): 10.3% of crashes, FSI 45.8% [95% CI 45.1–46.5%], fatal 3.22%
+  - Day (06:00–21:59): 89.7% of crashes, FSI 36.4% [95% CI 36.2–36.6%], fatal 1.48%
+    -> night crashes are 2.2x as likely to be fatal as daytime crashes
+  - Chi-square goodness of fit vs an even spread over 168 hour-slots: chi2(167) = 79,424, p < 0.001, Cohen's w = 0.63 (0.5+ = large effect)
+  saved figures/inv2_heatmap_hour_day.png
+  saved figures/inv2_hourly_profile.png
+  saved results/inv2.csv
+
+=== 3. What is the yearly crash trend (2012–2024)? ===
+  Starting rows: 200,754
+  Step 1: removed 4 non-injury crashes (dataset only covers injury crashes)
+  (No unknown years: 0 unparseable dates)
+  Step 2: removed 14,158 crashes from 2025 onwards from the main trend (2025: 14,022 crashes in the full year, of which 10,719 in Jan–Aug - kept for the Jan–Aug comparison)
+  Rows used: 186,592 for the 2012–2024 trend; 135,388 for the Jan–Aug comparison (2012–2025)
+
+  Key numbers:
+  - Crashes: 13,912 in 2012 vs 15,392 in 2024 (+10.6%)
+  - Peak year: 2016 (15,779); lowest year: 2020 (12,170)
+  - COVID dip: 2020 had -15.5% crashes vs 2019; 2022 was +4.5% vs 2019
+  - Linear trend 2012–2024: +41 crashes per year (R² = 0.02, p = 0.644)
+  - Linear trend excluding 2020–2021: +84 crashes per year (R² = 0.12, p = 0.301)
+    Note: only 13 yearly points - describe the trend, don't forecast from it.
+  - Fatal or serious share: 35.7% [34.9–36.5] in 2012 vs 33.4% [32.6–34.1] in 2024; peak 45.1% in 2018
+    trend -0.17 percentage points per year (R² = 0.03, p = 0.562)
+  - Deaths: 282 in 2012 vs 284 in 2024; lowest 211 (2020), highest 295 (2023); total 3,318 over 13 years
+  - Jan–Aug 2025: 10,719 crashes vs 10,215 average for Jan–Aug 2022–2024 (+4.9%); highest Jan–Aug total: 2016 (10,805)
+  saved figures/inv3_yearly_trend.png
+  saved results/inv3.csv
+
+=== 4. How does light condition relate to the fatality rate? ===
+  Starting rows: 200,754
+  Step 1: removed 3,439 crashes from the incomplete period (over-represents severe crashes)
+  Step 2: removed 7,673 crashes with unknown light condition (3.9% of remaining rows; 'Unk.' and 'Dark Street lights unknown')
+  Step 3: removed 4 non-injury crashes (dataset only covers injury crashes)
+  Rows used: 189,638 (94.5% of all rows)
+  Speed-band breakdown: 12,201 crashes with unknown speed zone left out of this part only
+
+  Key numbers:
+  - 189,638 injury crashes with known light condition, Jan 2012 – Aug 2025
+
+  Per light condition (% fatal [95% CI], deaths per 100 crashes, fatal rate vs day):
+    Day                      n=132,094  fatal 1.46% [1.40–1.53]  deaths/100 1.57  x1.00 [0.94–1.06]
+    Dusk/Dawn                n= 16,416  fatal 1.32% [1.16–1.51]  deaths/100 1.41  x0.90 [0.79–1.04]
+    Dark Street lights on    n= 30,330  fatal 1.70% [1.56–1.85]  deaths/100 1.81  x1.16 [1.06–1.28]
+    Dark Street lights off   n=    426  fatal 3.05% [1.79–5.15]  deaths/100 3.29  x2.09 [1.22–3.57]
+    Dark No street lights    n= 10,372  fatal 5.26% [4.85–5.71]  deaths/100 5.68  x3.60 [3.28–3.95]
+
+  - Dark with no street lights: 5.26% of crashes fatal vs 1.46% in daylight - 3.6x as likely to be fatal (95% CI 3.3–4.0)
+  - Dark with no street lights vs dark with street lights on: 5.26% vs 1.70% fatal - 3.1x (95% CI 2.7–3.5)
+  - Unlit crashes: 5.5% of crashes but 17.0% of deaths
+
+  Within speed zones (dark, no street lights vs day, % fatal):
+    ≤60 km/h    2.81% (n=2,132) vs 0.77% (n=74,386) - 3.6x (95% CI 2.8–4.7)
+    70–90 km/h  4.44% (n=2,342) vs 1.47% (n=28,413) - 3.0x (95% CI 2.4–3.7)
+    ≥100 km/h   6.79% (n=5,478) vs 4.62% (n=19,597) - 1.5x (95% CI 1.3–1.7)
+    -> the gap narrows at high speed but remains, so speed zone explains only part of it
+
+  - Chi-square (light condition x fatal): chi2(4) = 852.2, p < 0.001, Cramér's V = 0.067
+    Note: with this many crashes almost any difference is 'significant'; use the rate ratios and Cramér's V to judge the size.
+  - Caveat: association, not cause. Unlit roads also differ in road type, distance to emergency care and driver behaviour (speed, alcohol and fatigue at night).
+  saved figures/inv4_light_condition.png
+  saved results/inv4.csv
+  saved results/inv4_by_speed.csv
+
+=== 5. Where are the fatal and serious crash hotspots? ===
+  Starting rows: 200,754
+  Step 1: removed 3,439 crashes from the incomplete period
+  Step 2: removed 4 non-injury crashes
+  Step 3: removed 85 crashes with invalid coordinates (31 of them fatal/serious):
+            missing lat/lon               85
+            zero lat/lon                   0
+            outside Victoria box           0  (lat (-39.3, -33.9), lon (140.9, 150.1))
+  Step 4: relabelled 5,343 crashes from MORELAND to MERRI-BEK (council renamed in 2022)
+  Rows used: 197,226 injury crashes (73,739 fatal or serious, used for the maps)
+  LGA ranking: 5 crashes with no LGA name left out (2 fatal/serious; still shown on the maps)
+
+  Key numbers:
+  - 73,739 fatal or serious crashes mapped, Jan 2012 – Aug 2025 (3,267 fatal)
+
+  Top 10 LGAs by fatal + serious crashes:
+     1. Geelong                      3,712 FSI ( 5.0% of state), 102 fatal, 47.8% of its crashes FSI
+     2. Casey                        3,454 FSI ( 4.7% of state),  99 fatal, 38.6% of its crashes FSI
+     3. Melbourne                    3,281 FSI ( 4.5% of state),  48 fatal, 32.0% of its crashes FSI
+     4. Dandenong                    2,789 FSI ( 3.8% of state),  62 fatal, 41.0% of its crashes FSI
+     5. Hume                         2,421 FSI ( 3.3% of state),  68 fatal, 33.8% of its crashes FSI
+     6. Brimbank                     2,213 FSI ( 3.0% of state),  85 fatal, 36.3% of its crashes FSI
+     7. Monash                       2,070 FSI ( 2.8% of state),  69 fatal, 35.1% of its crashes FSI
+     8. Yarra Ranges                 1,995 FSI ( 2.7% of state),  98 fatal, 37.3% of its crashes FSI
+     9. Whittlesea                   1,958 FSI ( 2.7% of state),  66 fatal, 33.3% of its crashes FSI
+    10. Merri-bek (formerly Moreland) 1,837 FSI ( 2.5% of state),  37 fatal, 32.2% of its crashes FSI
+    -> top 10 of 86 LGAs account for 34.9% of the state's fatal + serious crashes
+
+  Top 10 LGAs by fatal crashes:
+     1. Geelong                      102 fatal (3.1% of state)
+     2. Casey                         99 fatal (3.0% of state)
+     3. Yarra Ranges                  98 fatal (3.0% of state)
+     4. Shepparton                    87 fatal (2.7% of state)  <- only #31 by fatal + serious
+     5. Brimbank                      85 fatal (2.6% of state)
+     6. Wyndham                       85 fatal (2.6% of state)  <- only #12 by fatal + serious
+     7. Mornington Peninsula          80 fatal (2.5% of state)  <- only #11 by fatal + serious
+     8. Cardinia                      76 fatal (2.3% of state)  <- only #18 by fatal + serious
+     9. Bendigo                       74 fatal (2.3% of state)  <- only #21 by fatal + serious
+    10. Monash                        69 fatal (2.1% of state)
+  - Fatal + serious crashes: 67.9% metro Melbourne, 32.1% country Victoria
+  - Fatal crashes: 45.9% metro Melbourne, 54.1% country Victoria
+    (all injury crashes: 71.6% metro, 28.4% country)
+
+  Top 5 hotspot cells (~1 km):
+    1. (-37.81, 144.96) Melbourne: 311 FSI, 6 fatal - ELIZABETH STREET (76); LA TROBE STREET (43)
+    2. (-37.82, 144.96) Melbourne: 256 FSI, 0 fatal - KING STREET (38); COLLINS STREET (37)
+    3. (-37.83, 144.96) Melbourne: 253 FSI, 1 fatal - CLARENDON STREET (48); CITY ROAD (40)
+    4. (-37.81, 144.97) Melbourne: 226 FSI, 1 fatal - VICTORIA STREET (45); EXHIBITION STREET (38)
+    5. (-37.81, 144.95) Melbourne: 210 FSI, 5 fatal - KING STREET (71); SPENCER STREET (44)
+  - Caveat: counts, not rates. There is no population or traffic data, so the ranking shows where severe crashes happen, not where travel is most dangerous per km driven.
+  saved figures/inv5_hotspot_map.png
+  saved figures/inv5_top_lgas.png
+  saved results/inv5.csv
+  saved results/inv5_hotspot_cells.csv
+
+=== 6. Statistical tests: what predicts a fatal or serious crash? ===
+  Starting rows: 200,754
+  Step 1: removed 3,439 crashes from the incomplete period
+  Step 2: removed 4 non-injury crashes
+  Step 3: removed 14,682 crashes with unknown speed zone
+  Step 4: removed 5,399 crashes with unknown light condition (5,192) or road geometry (213)
+  Step 5: Speed zone: removed rare categories '75 km/h' (19)
+  Step 5: Road geometry: removed rare categories 'Private property' (6), 'Road closure' (5)
+  Rows used: 177,200 (88.3% of all rows); 39.1% fatal or serious
+
+  Key numbers:
+  - 177,200 injury crashes, Jan 2012 – Aug 2025; 39.1% fatal or serious
+
+  Chi-square test (speed zone x fatal/serious yes-no):
+    chi2(8) = 2,437.3, p < 0.001, Cramér's V = 0.117
+    In plain English: if speed zone and severity were unrelated, a difference this large would almost never happen by chance (p < 0.001), so they are associated.
+    Cramér's V = 0.12 (0 = no link, 1 = perfect link; ~0.1 = weak): the link is real but weak - speed zone on its own explains only a small part of which crashes are severe.
+    With 177,200 crashes even small differences give tiny p-values, so judge importance by Cramér's V and the odds ratios, not p.
+    (Investigation 1 tested speed zone x 3 severity levels: V = 0.104.)
+
+  Logistic regression (fatal/serious vs speed zone + light + road geometry):
+  Each odds ratio compares a category with its baseline while the other two factors are held the same.
+
+    Speed zone (baseline: 60 km/h):
+      - 30 km/h: odds ratio 0.82 (95% CI 0.67–1.02, p = 0.08) - no clear difference from 60 km/h
+      - 40 km/h: 14% lower odds of a fatal/serious outcome than 60 km/h (OR 0.86, 95% CI 0.82–0.89, p < 0.001)
+      - 50 km/h: odds ratio 0.98 (95% CI 0.95–1.00, p = 0.10) - no clear difference from 60 km/h
+      - 70 km/h: 16% higher odds of a fatal/serious outcome than 60 km/h (OR 1.16, 95% CI 1.11–1.21, p < 0.001)
+      - 80 km/h: 28% higher odds of a fatal/serious outcome than 60 km/h (OR 1.28, 95% CI 1.24–1.32, p < 0.001)
+      - 90 km/h: 53% higher odds of a fatal/serious outcome than 60 km/h (OR 1.53, 95% CI 1.28–1.83, p < 0.001)
+      - 100 km/h: 74% higher odds of a fatal/serious outcome than 60 km/h (OR 1.74, 95% CI 1.69–1.79, p < 0.001)
+      - 110 km/h: 51% higher odds of a fatal/serious outcome than 60 km/h (OR 1.51, 95% CI 1.38–1.66, p < 0.001)
+
+    Light condition (baseline: Day):
+      - Dusk/dawn: 10% lower odds of a fatal/serious outcome than daylight (OR 0.90, 95% CI 0.87–0.94, p < 0.001)
+      - Dark, lights on: 28% higher odds of a fatal/serious outcome than daylight (OR 1.28, 95% CI 1.25–1.31, p < 0.001)
+      - Dark, lights off: odds ratio 1.19 (95% CI 0.97–1.45, p = 0.09) - no clear difference from daylight
+      - Dark, no street lights: 36% higher odds of a fatal/serious outcome than daylight (OR 1.36, 95% CI 1.30–1.42, p < 0.001)
+
+    Road geometry (baseline: Not at intersection):
+      - Cross intersection: 17% lower odds of a fatal/serious outcome than not at intersection (OR 0.83, 95% CI 0.81–0.85, p < 0.001)
+      - T intersection: 5% lower odds of a fatal/serious outcome than not at intersection (OR 0.95, 95% CI 0.92–0.97, p < 0.001)
+      - Multiple intersection: odds ratio 0.93 (95% CI 0.87–1.00, p = 0.06) - no clear difference from not at intersection
+      - Y intersection: 25% lower odds of a fatal/serious outcome than not at intersection (OR 0.75, 95% CI 0.63–0.90, p = 0.001)
+      - Dead end: odds ratio 0.99 (95% CI 0.71–1.38, p = 0.96) - no clear difference from not at intersection
+
+  Biggest effects:
+    - Speed zone: 100 km/h (OR 1.74)
+    - Light condition: Dark, no street lights (OR 1.36)
+    - Road geometry: Y intersection (OR 0.75)
+
+  Odds ratios vs probabilities: 39% of crashes are fatal/serious, so odds ratios exaggerate the change in probability.
+  Predicted chance of a fatal/serious outcome for a typical crash (daylight, not at an intersection):
+    30 km/h: 32%, 40 km/h: 33%, 50 km/h: 36%, 60 km/h: 36%, 70 km/h: 40%, 80 km/h: 42%, 90 km/h: 46%, 100 km/h: 50%, 110 km/h: 46%
+    e.g. 60 km/h 36% -> 100 km/h 50% (odds ratio 1.74, but the probability is 1.37x as high)
+
+  - Predictive power: 5-fold cross-validated AUC = 0.579 (range 0.575–0.581).
+    In plain English: given two crashes, one fatal/serious and one not, the model ranks the severe one higher 58% of the time (50% = guessing). These three factors matter, but most of what makes a crash severe (vehicle, seatbelt use, actual speed, age, etc.) is not in them.
+  - Caveats: association, not cause. The model only covers crashes that caused an injury, and road type, location and driver behaviour that go with each factor are not fully controlled for.
+  saved figures/inv6_severity_model.png
+  saved results/inv6.csv
+  saved results/inv6_logit.csv
+
+=== 7. Deep investigation: does the speed-zone effect hold after adjustment? ===
+  Base selection (shared with investigation 6):
+  Starting rows: 200,754
+  Step 1: removed 3,439 crashes from the incomplete period
+  Step 2: removed 4 non-injury crashes
+  Step 3: removed 14,682 crashes with unknown speed zone
+  Step 4: removed 5,399 crashes with unknown light condition (5,192) or road geometry (213)
+  Step 5: Speed zone: removed rare categories '75 km/h' (19)
+  Step 5: Road geometry: removed rare categories 'Private property' (6), 'Road closure' (5)
+  Rows used: 177,200 (88.3% of all rows); 39.1% fatal or serious
+  Step 6-7: tidied crash type labels; added speed bands ['≤50', '60', '70–80', '≥90']
+  Step 8 (M3 only): removed 7,222 crashes with unknown or rare road class, urban/rural area or divided status (road class unknown: 6,409)
+
+  Key numbers:
+  - 177,200 crashes (M0–M2), 169,978 for M3; 39.1% fatal or serious
+  - Speed-zone odds ratios vs 60 km/h, unadjusted (M0) -> fully adjusted (M3):
+       40 km/h: 0.86 [0.82–0.89] -> 0.79 [0.76–0.83]
+       70 km/h: 1.17 [1.12–1.22] -> 1.23 [1.18–1.28]
+       80 km/h: 1.30 [1.26–1.34] -> 1.33 [1.28–1.37]
+      100 km/h: 1.84 [1.79–1.89] -> 1.59 [1.52–1.66]
+      110 km/h: 1.67 [1.53–1.83] -> 1.64 [1.47–1.83]
+  - 100 km/h across models: M0 1.84 -> M1 1.74 -> M2 1.67 -> M3 1.59
+    The extra odds at 100 km/h shrink from +84% to +59% (30% of the raw effect explained by the added factors)
+  - Speed as a number (M3): each +10 km/h in the posted limit multiplies the odds by 1.126 [95% CI 1.116–1.136]
+  - Model fit (cross-validated AUC): M0 0.561, M1 0.579, M2 0.609, M3 0.612
+
+  - Within-group comparison (100 vs 60 km/h): odds ratio > 1 in 16 of 16 groups; the 95% CI is entirely above 1 in 15
+      pooled within crash type        OR 1.71 [1.66–1.77]
+      pooled within light condition   OR 1.84 [1.79–1.90]
+      pooled within road class        OR 2.02 [1.96–2.09]
+      pooled within metro vs country  OR 1.77 [1.71–1.82]
+      weakest group: Dark, no street lights (OR 1.23 [1.08–1.39]); strongest: Arterial Highway (OR 2.24)
+      skipped (too few 100 km/h crashes): Dark, lights off
+  - Crash mix, zones <90 vs >=90 km/h: struck pedestrian 9.4% vs 0.7%; fixed object 11.9% vs 34.0%
+
+  Findings:
+  1. The speed-zone effect holds. After adding light, geometry, crash type, road class, urban/rural area and divided roads, 100 km/h zones still have 59% higher odds of a fatal/serious outcome than 60 km/h (OR 1.59), and the pattern rises steadily with the limit (1.13x odds per 10 km/h).
+  2. Part of the raw effect (30%) is explained by the other factors. Crash type matters most: high-speed zones have many more fixed-object and rollover crashes and far fewer pedestrian crashes. Adjusting for it lowers the 40-50 km/h odds ratios (pedestrian crashes were masking their advantage).
+  3. The effect appears inside almost every group tested (15 of 16 within-group CIs are entirely above 1), in metro and country areas and on every road class, so no single confounder explains it.
+  - Road design: freeway 88% / divided 88% of 110 km/h crashes vs freeway 27% / divided 29% of 100 km/h crashes
+  4. 110 km/h zones: before adjusting for road type (M1) their odds ratio (1.51) was below 100 km/h (1.74); after adding road class and divided roads (M3) it is 1.64 vs 1.59 (CIs overlap - no clear difference). 110 km/h roads are mostly divided freeways, so their lower raw severity reflects road design (barriers, no oncoming traffic) rather than the higher limit being safer.
+
+  Possible confounders and limits:
+  - Rural roads: high-speed zones are mostly rural. M3 adjusts for road class and urban/rural area, but other rural factors remain (distance to hospital and ambulance response times, older vehicles, unsealed shoulders, trees close to the road).
+  - No traffic volume (exposure) data: we can compare how *severe* crashes are, not how *likely* a crash is per km travelled. Nothing here says 100 km/h roads have more crashes per trip.
+  - Only injury crashes are recorded: if minor crashes on high-speed rural roads are less often reported than in the city, the FSI share there is overstated.
+  - Posted limit is not actual travel speed: congestion and speeding are not measured.
+  - Crash type is partly *caused* by speed (faster vehicles are more likely to leave the road and hit a fixed object), so adjusting for it removes some of the real speed effect. M2/M3 are therefore conservative estimates.
+  - Not in the data: driver age and experience, alcohol/drugs, fatigue, seatbelt/helmet use, vehicle type and safety rating.
+
+  Confidence level:
+  - HIGH that higher speed zones are associated with more severe crashes: the effect is large, tightly estimated, rises steadily with the limit, and survives every adjustment and every group comparison.
+  - MODERATE on the size: adjusted OR about 1.6 for 100 vs 60 km/h, but it ranges from 1.59 to 1.84 depending on the model, and adjusting for crash type may remove part of the true effect.
+  - LOW that speed limits alone *cause* the difference: this is observational data with unmeasured confounders (exposure, actual speed, emergency response).
+  saved figures/deep_01_stratified_gradient.png
+  saved figures/deep_02_model_attenuation.png
+  saved figures/deep_03_stratum_or.png
+  saved results/deep_stratified.csv
+  saved results/deep_models.csv
+
+Done in 20.2s

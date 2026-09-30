@@ -1,0 +1,16 @@
+speed_band,light_condition,crashes,fatal,pct_fatal,fatal_ci_low,fatal_ci_high,low_n
+≤60 km/h,Day,74386,574,0.772,0.711,0.837,False
+≤60 km/h,Dusk/Dawn,8859,59,0.666,0.517,0.858,False
+≤60 km/h,Dark Street lights on,20842,303,1.454,1.3,1.625,False
+≤60 km/h,Dark Street lights off,255,5,1.961,0.84,4.507,False
+≤60 km/h,Dark No street lights,2132,60,2.814,2.193,3.606,False
+70–90 km/h,Day,28413,418,1.471,1.338,1.618,False
+70–90 km/h,Dusk/Dawn,3648,46,1.261,0.947,1.678,False
+70–90 km/h,Dark Street lights on,7154,185,2.586,2.243,2.98,False
+70–90 km/h,Dark Street lights off,108,6,5.556,2.571,11.594,False
+70–90 km/h,Dark No street lights,2342,104,4.441,3.678,5.352,False
+≥100 km/h,Day,19597,905,4.618,4.333,4.921,False
+≥100 km/h,Dusk/Dawn,2869,106,3.695,3.064,4.449,False
+≥100 km/h,Dark Street lights on,1311,23,1.754,1.172,2.619,False
+≥100 km/h,Dark Street lights off,43,2,4.651,1.285,15.456,True
+≥100 km/h,Dark No street lights,5478,372,6.791,6.154,7.488,False
